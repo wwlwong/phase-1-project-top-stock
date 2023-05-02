@@ -3,4 +3,19 @@ body {
     background-image: url("https://cdn.pixabay.com/photo/2015/02/20/06/19/stock-exchange-642896_960_720.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    
 }
+
+.transbox {
+    margin: 10px 10px 10px 10px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    opacity: 0.6;
+  }
+
+.transbox h1 {
+    font-size: 4vw;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+  }
