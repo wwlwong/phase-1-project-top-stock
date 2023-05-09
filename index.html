@@ -16,12 +16,27 @@
     <div class="searchoption">
         <p>Choose your search option:</p>
 
-        <div class="searchBar"></div>
+        <div class="searchBar">
             <label for="ticker-search">Search by Ticker:</label>
             <input type="search" id="ticker-search" name="q">
             
             <button>Search</button>
-        </div>    
+        </div>   
+        
+        <div class="datalist">
+            <p>Filter By:</p>
+            <form>
+                <input list="filterBy" name="filterBy">
+                <datalist id="filterBy">
+                  <option value="All">
+                  <option value="Bearish">
+                  <option value="Bullish">
+                  <option value="Top 10 Sentiment">
+                  <option value="Bottom 10 Sentiment">
+                </datalist>
+                <input type ='submit'>
+            </form>
+        </div>
     </div>
     
 </body>
