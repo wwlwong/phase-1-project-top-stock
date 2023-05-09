@@ -11,11 +11,23 @@ body {
     background-color: #ffffff;
     border: 1px solid black;
     opacity: 0.6;
-  }
+}
 
 .transbox h1 {
     font-size: 4vw;
     font-weight: bold;
     color: #000000;
     text-align: center;
-  }
+}
+
+.searchbox {
+    background-color: #ffffff;
+    border: 1px solid black;
+    opacity: 0.6;
+    
+}
+
+.radio-btn{
+    display: flex;
+    flex-direction: row;
+}
