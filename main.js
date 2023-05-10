@@ -1,11 +1,11 @@
 function fetchStocks(){
-    return fetch('https://tradestie.com/api/v1/apps/reddit')
+    return fetch('http://localhost:3000/stocks')
     .then(response => response.json())
     .then(stocks => renderStocks(stocks));
 }
 
 function renderStocks(stocks) {
-    const output = document.querySelector('output');
+    const output = document.querySelector('.output');
     stocks.forEach(stock => {
       const tr = document.createElement('tr')
       const td0 = document.createElement('td');
