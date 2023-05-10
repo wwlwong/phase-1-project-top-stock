@@ -20,14 +20,13 @@ body {
     text-align: center;
 }
 
-.searchbox {
+.searchoption {
     background-color: #ffffff;
     border: 1px solid black;
+    margin: 5px;
     opacity: 0.6;
     
 }
 
-.radio-btn{
-    display: flex;
-    flex-direction: row;
-}
+
+
