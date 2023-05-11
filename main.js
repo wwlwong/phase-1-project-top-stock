@@ -1,7 +1,7 @@
 function fetchStocks(){
     return fetch('http://localhost:3000/stocks')
     .then(response => response.json())
-    .then(stocks => renderAllStocks(stocks));
+    .then(stocks => searchStock(stocks, "BBD"));
 }
 
 function renderAllStocks(stocks) {
@@ -20,6 +20,24 @@ function renderAllStocks(stocks) {
     //   tableBody.append(tr, td0, td1, td2);
     // });
   }
+
+function renderFilteredStocks(stocks, filterSentiment){
+  let filterStocks = stocks.filter(stock => stock.sentiment == filterSentiment);
+  addTableBody(filterStocks);
+}
+
+function searchStock(stocks, stockName){
+  let result = stocks.find(stock=> stock.ticker === stockName);
+  if (result == undefined){
+    const tr = document.createElement('tr')
+    const td0 = document.createElement('td');
+    td0.innerHTML = "Stock not found";
+    tableBody.append(tr, td0)
+  }
+  else {
+    addTableBody(result);
+  }
+}
 
 function addTableBody(stock){
     const tr = document.createElement('tr')
