@@ -1,7 +1,7 @@
 function fetchStocks(){
     return fetch('http://localhost:3000/stocks')
     .then(response => response.json())
-    .then(stocks => searchStock(stocks, "BBD"));
+    .then(stocks => renderFilteredStocks(stocks, "Bearish"))
 }
 
 function renderAllStocks(stocks) {
@@ -22,8 +22,9 @@ function renderAllStocks(stocks) {
   }
 
 function renderFilteredStocks(stocks, filterSentiment){
-  let filterStocks = stocks.filter(stock => stock.sentiment == filterSentiment);
-  addTableBody(filterStocks);
+  let filterStocks = stocks.filter(stock => stock.sentiment === filterSentiment);
+  //addTableBody(filterStocks);
+  filterStocks.forEach(stock => addTableBody(stock));
 }
 
 function searchStock(stocks, stockName){
