@@ -9,14 +9,15 @@ body {
 .transbox {
     margin: 10px 10px 10px 10px;
     background-color: #ffffff;
-    border: 1px solid black;
+    border: 1px solid rgb(228, 134, 134);
     opacity: 0.6;
 }
 
 .transbox h1 {
-    font-size: 4vw;
+    font-size: 3vw;
     font-weight: bold;
-    color: #000000;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #06b331;
     text-align: center;
 }
 
@@ -28,6 +29,10 @@ body {
     
 }
 
+.output {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
 table {
     border: 2px solid;
