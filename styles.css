@@ -28,10 +28,19 @@ body {
     
 }
 
-table, th, td, tr {
-    border: 1px solid;
+
+table {
+    border: 2px solid;
     border-collapse: collapse;
+    width: 70%;
   }
 
+th {
+    text-align: center;
+    height: 30px;
+    font-size: 20px;
+    background-color: #04AA6D;
+    color: white;
+}
 
-
+tr:nth-child(even) {background-color: #f2f2f2;}
