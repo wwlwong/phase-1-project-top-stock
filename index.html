@@ -24,19 +24,18 @@
         </div>   
         
         <div class="datalist" >
-            <p>Filter By:</p>
-            <form>
-                
-                <input list="filterBy" name="filterBy">
-                <datalist id="filterBy">
-                  <option value="All">
-                  <option value="Bearish">
-                  <option value="Bullish">
-                  <option value="Top 10 Sentiment">
-                  <option value="Bottom 10 Sentiment">
-                </datalist>
+            <form method="GET">
+                <label for="filterBy">Filter Stocks by:</label>
+                <select id="filterBy" name="filterBy">
+                  <option value="All">All</option>
+                  <option value="Bearish">Bearish</option>
+                  <option value="Bullish">Bullish</option>
+                  <option value="Top 10 Sentiment">Top 10 Sentiment</option>
+                  <option value="Bottom 10 Sentiment">Bottom 10 Sentiment</option>
+                </select>
                 <input type ='submit'>
             </form>
+            <button type="button" id="filterBtn">Display</button>
         </div>
     </div>
 
