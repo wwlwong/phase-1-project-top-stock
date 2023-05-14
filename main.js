@@ -1,7 +1,7 @@
 function fetchStocks(){
     return fetch('http://localhost:3000/stocks')
     .then(response => response.json())
-    .then(stocks => renderFilteredStocks(stocks, "Bearish"))
+    .then(stocks => sortStocks(stocks, "bottom"))
 }
 
 function renderAllStocks(stocks) {
@@ -37,6 +37,25 @@ function searchStock(stocks, stockName){
   }
   else {
     addTableBody(result);
+  }
+}
+
+function sortStocks(stocks, sortBy){
+  if (sortBy == "top"){
+    const values = stocks
+        .map(({ sentiment_score }) => sentiment_score)
+        .sort((a, b) => b - a)
+        .slice(0, 10)
+    const tenStocks = stocks.filter(({ sentiment_score }) => values.includes(sentiment_score));
+    tenStocks.forEach(stock => addTableBody(stock));
+  }
+  else {
+    const values = stocks
+        .map(({ sentiment_score }) => sentiment_score)
+        .sort((a, b) => a - b)
+        .slice(0, 10)
+    const tenStocks = stocks.filter(({ sentiment_score }) => values.includes(sentiment_score));
+    tenStocks.forEach(stock => addTableBody(stock));
   }
 }
 
