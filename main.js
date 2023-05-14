@@ -88,11 +88,7 @@ function removeTableBody() {
 document.addEventListener('DOMContentLoaded', function() {
   const fetchJson = fetch('http://localhost:3000/stocks')
     .then(response => response.json());
-  
-  // const searchBtn = document.querySelector('#searchBtn');
-  // searchBtn.addEventListener('click', () => {
-  //   fetchJson.then(stocks => sortStocks(stocks, 'top'))
-  // });
+
 
   const filterOption = document.getElementById('filterBy');
   const button = document.getElementById('filterBtn');
@@ -113,6 +109,13 @@ document.addEventListener('DOMContentLoaded', function() {
     else {
       fetchJson.then(stocks => sortStocks(stocks, "bottom"))
     }
+  })
+
+  const search = document.getElementById('ticker-search')
+  search.addEventListener('submit', (e) => {
+    e.preventDefault()
+    removeTableBody()
+    fetchJson.then(stocks => searchStock(stocks, document.getElementById('searchByTicker').value))
   })
 });
 
