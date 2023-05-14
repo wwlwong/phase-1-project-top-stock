@@ -65,7 +65,11 @@ function sortStocks(stocks, sortBy){
 function addTableBody(stock){
     const tr = document.createElement('tr')
     const td0 = document.createElement('td');
-    td0.innerHTML = stock.ticker;
+    const a = document.createElement('a')
+    a.setAttribute('href',`https://finance.yahoo.com/quote/${stock.ticker}`);
+    a.innerHTML = stock.ticker;
+    td0.appendChild(a);
+    //td0.innerHTML = stock.ticker;
 
     const td1 = document.createElement('td');
     td1.innerHTML = stock.sentiment;
