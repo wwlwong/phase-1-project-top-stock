@@ -46,16 +46,16 @@ function sortStocks(stocks, sortBy){
         .map(({ sentiment_score }) => sentiment_score)
         .sort((a, b) => b - a)
         .slice(0, 10)
-    const tenStocks = stocks.filter(({ sentiment_score }) => values.includes(sentiment_score));
-    tenStocks.forEach(stock => addTableBody(stock));
+    const topTen = stocks.filter(({ sentiment_score }) => values.includes(sentiment_score));
+    topTen.forEach(stock => addTableBody(stock));
   }
   else {
     const values = stocks
         .map(({ sentiment_score }) => sentiment_score)
         .sort((a, b) => a - b)
         .slice(0, 10)
-    const tenStocks = stocks.filter(({ sentiment_score }) => values.includes(sentiment_score));
-    tenStocks.forEach(stock => addTableBody(stock));
+    const bottomTen = stocks.filter(({ sentiment_score }) => values.includes(sentiment_score));
+    bottomTen.forEach(stock => addTableBody(stock));
   }
 }
 
@@ -81,6 +81,35 @@ function removeTableBody() {
 }
 
 
+
 document.addEventListener('DOMContentLoaded', function() {
-    fetchStocks();
-  });
+  const fetchJson = fetch('http://localhost:3000/stocks')
+    .then(response => response.json());
+  
+  // const searchBtn = document.querySelector('#searchBtn');
+  // searchBtn.addEventListener('click', () => {
+  //   fetchJson.then(stocks => sortStocks(stocks, 'top'))
+  // });
+
+  const filterOption = document.getElementById('filterBy');
+  const button = document.getElementById('filterBtn');
+  button.addEventListener('click', (e) => {
+    let option = filterOption.value;
+    if (option == "All"){
+      fetchJson.then(stocks => renderAllStocks(stocks))
+    }
+    else if (option == "Bullish"){
+      fetchJson.then(stocks => renderFilteredStocks(stocks, option))
+    }
+    else if (option == "Bearish"){
+      fetchJson.then(stocks => renderFilteredStocks(stocks, option))
+    }
+    else if (option == "Top 10 Sentiment"){
+      fetchJson.then(stocks => sortStocks(stocks, "top"))
+    }
+    else {
+      fetchJson.then(stocks => sortStocks(stocks, "bottom"))
+    }
+  })
+});
+
