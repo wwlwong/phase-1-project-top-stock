@@ -1,9 +1,9 @@
 ## phase-1-project-top-stock
 
-###Description:
+### Description:
 Allows user to search from a list of top stocks by ticker name and displays the sentiment and sentiment score
 
-###Installation:
+### Installation:
 
 1. If not already done so, install JSON server globally on your machine with this command:
 npm install -g json-server
@@ -20,10 +20,23 @@ npm install -g json-server
 5. In the project directory, open index.html  
 
 
-###How to use:
+### How to use:
 
+Stocks sentiment can be viewed in 2 ways. 
+1. Search by Ticker: 
+Enter the stock ticker name in the search field and click search. If the stock is in the database, the stock ticker name, sentiment, and sentiment score will be shown.
 
-###Credits:
+2. Filter Stocks By:
+Choose one of the following option:
+-Display all stocks in the database
+-Display stocks with Bullish sentiment
+-Display stocks with Bearish sentiment
+-Display the 10 stocks with the highest sentiment score
+-Display the 10 stocks with the lowest sentiment score
+
+In addition, each ticker name in the search result is a hyperlink to Yahoo finance that shows the stock's current market price.
+
+### Credits:
 
 The data in db.json was copied from a public API due to CORS. 
 Original API link: https://tradestie.com/api/v1/apps/reddit
