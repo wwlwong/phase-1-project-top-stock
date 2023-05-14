@@ -5,7 +5,8 @@ function fetchStocks(){
 }
 
 function renderAllStocks(stocks) {
-    const tableBody = document.getElementById('tableBody');
+  removeTableBody()  
+  const tableBody = document.getElementById('tableBody');
     stocks.forEach(stock => addTableBody(stock));
     //   {
     //   const tr = document.createElement('tr')
@@ -24,6 +25,7 @@ function renderAllStocks(stocks) {
 function renderFilteredStocks(stocks, filterSentiment){
   let filterStocks = stocks.filter(stock => stock.sentiment === filterSentiment);
   //addTableBody(filterStocks);
+  removeTableBody()
   filterStocks.forEach(stock => addTableBody(stock));
 }
 
@@ -41,6 +43,7 @@ function searchStock(stocks, stockName){
 }
 
 function sortStocks(stocks, sortBy){
+  removeTableBody()
   if (sortBy == "top"){
     const values = stocks
         .map(({ sentiment_score }) => sentiment_score)
