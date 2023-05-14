@@ -17,10 +17,12 @@
         <p>Choose your search option:</p>
 
         <div class="searchBar">
-            <label for="ticker-search">Search by Ticker:</label>
-            <input type="search" id="ticker-search" name="q">
+            <form id="ticker-search" action="" method="GET">
+                <label for="ticker-search">Search by Ticker:</label>
+                <input type="text" id="searchByTicker" name="searchByTicker" placeholder="Example WAL">
+                <input type="submit" value="Search">
+            </form>
             
-            <button class='searchBtn'>Search</button>
         </div>   
         
         <div class="datalist" >
