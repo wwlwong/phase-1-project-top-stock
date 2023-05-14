@@ -1,34 +1,18 @@
-function fetchStocks(){
-    return fetch('http://localhost:3000/stocks')
-    .then(response => response.json())
-    .then(stocks => sortStocks(stocks, "bottom"))
-}
 
+// Loads and displays all the stocks in the db.json
 function renderAllStocks(stocks) {
   removeTableBody()  
-  const tableBody = document.getElementById('tableBody');
-    stocks.forEach(stock => addTableBody(stock));
-    //   {
-    //   const tr = document.createElement('tr')
-    //   const td0 = document.createElement('td');
-    //   td0.innerHTML = stock.ticker;
+  stocks.forEach(stock => addTableBody(stock));
+}
 
-    //   const td1 = document.createElement('td');
-    //   td1.innerHTML = stock.sentiment;
-
-    //   const td2 = document.createElement('td');
-    //   td2.innerHTML = stock.sentiment_score;
-    //   tableBody.append(tr, td0, td1, td2);
-    // });
-  }
-
+// Filters all stocks in db.json based on sentiment and outputs the results
 function renderFilteredStocks(stocks, filterSentiment){
   let filterStocks = stocks.filter(stock => stock.sentiment === filterSentiment);
-  //addTableBody(filterStocks);
   removeTableBody()
   filterStocks.forEach(stock => addTableBody(stock));
 }
 
+// Goes through db.json to find the matching ticker value and outputs the result
 function searchStock(stocks, stockName){
   let result = stocks.find(stock=> stock.ticker === stockName);
   if (result == undefined){
@@ -42,6 +26,7 @@ function searchStock(stocks, stockName){
   }
 }
 
+// Sorts all the stocks in db.json by sentiment score and outputs the top or bottom 10 stocks
 function sortStocks(stocks, sortBy){
   removeTableBody()
   if (sortBy == "top"){
@@ -52,6 +37,7 @@ function sortStocks(stocks, sortBy){
     const topTen = stocks.filter(({ sentiment_score }) => values.includes(sentiment_score));
     topTen.forEach(stock => addTableBody(stock));
   }
+
   else {
     const values = stocks
         .map(({ sentiment_score }) => sentiment_score)
@@ -62,6 +48,7 @@ function sortStocks(stocks, sortBy){
   }
 }
 
+// Creates a table row for each stock to display the output. Adds a hyperlink for each ticker name to find the stock price
 function addTableBody(stock){
     const tr = document.createElement('tr')
     const td0 = document.createElement('td');
@@ -69,7 +56,6 @@ function addTableBody(stock){
     a.setAttribute('href',`https://finance.yahoo.com/quote/${stock.ticker}`);
     a.innerHTML = stock.ticker;
     td0.appendChild(a);
-    //td0.innerHTML = stock.ticker;
 
     const td1 = document.createElement('td');
     td1.innerHTML = stock.sentiment;
@@ -79,9 +65,9 @@ function addTableBody(stock){
     tableBody.append(tr, td0, td1, td2);
 }
 
+// Removes the table of the output results from the previous search to prevent search results from piling up down the results table
 function removeTableBody() {
   let element = document.getElementById("tableBody");
- 
   while (element.firstChild) {
     element.removeChild(element.firstChild);
   }  
@@ -92,7 +78,6 @@ function removeTableBody() {
 document.addEventListener('DOMContentLoaded', function() {
   const fetchJson = fetch('http://localhost:3000/stocks')
     .then(response => response.json());
-
 
   const filterOption = document.getElementById('filterBy');
   const button = document.getElementById('filterBtn');
