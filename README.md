@@ -42,4 +42,4 @@ The data in db.json was copied from a public API due to CORS.<br />
 Original API link: https://tradestie.com/api/v1/apps/reddit <br />
 Reddit Stocks - Top Stocks from Wallstreetbets <br />
 
-
+Background image from https://cdn.pixabay.com/photo/2015/02/20/06/19/stock-exchange-642896_960_720.jpg
