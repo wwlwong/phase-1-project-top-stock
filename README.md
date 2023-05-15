@@ -34,6 +34,8 @@ Choose one of the following option:
 -Display the 10 stocks with the highest sentiment score
 -Display the 10 stocks with the lowest sentiment score
 
+![Untitled](https://github.com/wwlwong/phase-1-project-top-stock/assets/102167991/de5ae94f-60dc-474b-872f-7ec45e4c83a5)
+
 In addition, each ticker name in the search result is a hyperlink to Yahoo finance that shows the stock's current market price.
 
 ### Credits:
