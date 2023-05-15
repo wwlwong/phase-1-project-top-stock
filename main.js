@@ -50,6 +50,7 @@ function sortStocks(stocks, sortBy){
 
 // Creates a table row for each stock to display the output. Adds a hyperlink for each ticker name to find the stock price
 function addTableBody(stock){
+    const tableBody = document.getElementById('tableBody');
     const tr = document.createElement('tr')
     const td0 = document.createElement('td');
     const a = document.createElement('a')

@@ -40,4 +40,6 @@ In addition, each ticker name in the search result is a hyperlink to Yahoo finan
 
 The data in db.json was copied from a public API due to CORS.<br /> 
 Original API link: https://tradestie.com/api/v1/apps/reddit <br />
-Reddit Stocks - Top Stocks from Wallstreetbets
+Reddit Stocks - Top Stocks from Wallstreetbets <br />
+
+

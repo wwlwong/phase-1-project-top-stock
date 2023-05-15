@@ -10,7 +10,7 @@ body {
     margin: 10px 10px 10px 10px;
     background-color: #ffffff;
     border: 1px solid rgb(228, 134, 134);
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
 .transbox h1 {
@@ -22,12 +22,20 @@ body {
 }
 
 .searchoption {
-    background-color: #ffffff;
+    background-color: #dcb2b2;
     border: 1px solid black;
     margin: 5px;
     opacity: 0.6;
-    
+    position: relative;
+    display: flex;
+    justify-content: center;
+  align-items: center;
 }
+
+.searchoption h3{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 
 .output {
     margin-left: auto;
@@ -38,6 +46,7 @@ table {
     border: 2px solid;
     border-collapse: collapse;
     width: 70%;
+    justify-content: center;
   }
 
 th {
