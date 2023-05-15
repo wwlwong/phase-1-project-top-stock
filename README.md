@@ -2,6 +2,19 @@
 
 ### Description:
 Allows user to search from a list of top stocks by ticker name and displays the sentiment and sentiment score
+There are 50 stocks in the database:
+
+| AAPL | ABNB | AFRM | AI | AMD |
+|---|---|---|---|---|
+| ANY | BBBY | BY | CC | CMA | 
+| CVNA | CVS | DIS | EOD | EV | 
+| FRC| FUBO | GM | HAS | HOOD | 
+| III | JP | JPM | LAC | LCID | 
+| MSFT | NFLX | NOW | NVAX | NVDA | 
+| ON | OXY | PACW | PLAN | PLAY | 
+| PLTR | PYPL | QQQ | REAL | RIVN | 
+| SPCE | SQQQ| TECH | TSLA | TV | 
+| TWLO| UPST | VERY | WAL | WEN | 
 
 ### Installation:
 
