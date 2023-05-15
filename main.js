@@ -53,6 +53,8 @@ function addTableBody(stock){
     
     const tableBody = document.getElementById('tableBody');
     tableBody.style.textAlign = 'center'
+    tableBody.style.backgroundColor = "rgba(70, 130, 180, 0.9)"
+    tableBody.style.fontSize = "1.5vw"
     const tr = document.createElement('tr')
     const td0 = document.createElement('td');
     const a = document.createElement('a')
